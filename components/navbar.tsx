@@ -27,7 +27,7 @@ export default function Navbar({ isDark, setIsDark }: NavbarProps) {
               </span>
               <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
                 <Sparkles className="w-2.5 h-2.5" />
-                <span>Islamic Q&A by The Muslim Lantern</span>
+                <span></span>
               </div>
             </div>
           </div>
