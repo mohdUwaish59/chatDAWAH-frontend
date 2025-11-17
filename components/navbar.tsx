@@ -38,12 +38,8 @@ export default function Navbar({ isDark, setIsDark }: NavbarProps) {
               The Muslim Lantern
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
             </a>
-            <a href="https://github.com/mohammaduwaish" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors relative group">
+            <a href="https://github.com/mohdUwaish59" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors relative group">
               Developer
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-            </a>
-            <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors relative group">
-              API Docs
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
             </a>
           </div>
@@ -77,7 +73,7 @@ export default function Navbar({ isDark, setIsDark }: NavbarProps) {
               size="sm"
               onClick={() => window.open('https://www.youtube.com/@themuslimlantern', '_blank')}
             >
-              Watch Debates
+              Explore More
             </Button>
           </div>
         </div>
@@ -91,15 +87,12 @@ export default function Navbar({ isDark, setIsDark }: NavbarProps) {
             <a href="https://github.com/mohammaduwaish" target="_blank" rel="noopener noreferrer" className="block px-4 py-2.5 text-sm rounded-xl hover:bg-muted/50 transition-colors">
               Developer
             </a>
-            <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer" className="block px-4 py-2.5 text-sm rounded-xl hover:bg-muted/50 transition-colors">
-              API Docs
-            </a>
             <Button 
               className="w-full mt-2 rounded-xl" 
               size="sm"
               onClick={() => window.open('https://www.youtube.com/@themuslimlantern', '_blank')}
             >
-              Watch Debates
+              Explore More
             </Button>
           </div>
         )}
