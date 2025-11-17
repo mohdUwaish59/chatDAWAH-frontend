@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 import { queryChat, type ContextItem } from "@/lib/api"
 import { useToast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
@@ -410,10 +411,18 @@ export default function ChatInterfaceEnhanced() {
               </Button>
             </form>
 
-            <p className="text-xs text-muted-foreground mt-4 text-center flex items-center justify-center gap-1.5">
-              <AlertCircle className="w-3 h-3" />
-              AI can make mistakes. Verify important information with sources.
-            </p>
+            <div className="mt-4 space-y-2">
+              <Alert className="border-yellow-500/50 bg-yellow-500/5">
+                <AlertCircle className="text-yellow-600" />
+                <AlertDescription className="text-yellow-700 dark:text-yellow-500">
+                  First message may take longer as the backend wakes up from sleep (free tier hosting).
+                </AlertDescription>
+              </Alert>
+              <p className="text-xs text-muted-foreground text-center flex items-center justify-center gap-1.5">
+                <AlertCircle className="w-3 h-3" />
+                AI can make mistakes. Verify important information with sources.
+              </p>
+            </div>
           </div>
         </div>
       </div>
