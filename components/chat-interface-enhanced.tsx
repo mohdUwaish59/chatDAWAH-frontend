@@ -23,6 +23,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { queryChat, type ContextItem } from "@/lib/api"
 import { useToast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
+import MarkdownRenderer from "@/components/markdown-renderer"
 
 interface Message {
   id: string
@@ -262,9 +263,15 @@ export default function ChatInterfaceEnhanced() {
                     : "bg-card border border-border/50 text-foreground"
                 )}
               >
-                <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">
-                  {message.content}
-                </p>
+                {message.role === "assistant" ? (
+                  <div className="text-sm leading-relaxed markdown-content">
+                    <MarkdownRenderer content={message.content} />
+                  </div>
+                ) : (
+                  <p className="text-sm leading-relaxed whitespace-pre-wrap break-words">
+                    {message.content}
+                  </p>
+                )}
 
                 {message.role === "assistant" && (
                   <>
