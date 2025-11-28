@@ -76,8 +76,8 @@ export default function ChatInterface() {
     setIsLoading(true)
 
     try {
-      // Call backend API
-      const response = await queryChat(userInput, 5)
+      // Call backend API - top_k will be fetched from backend config automatically
+      const response = await queryChat(userInput)
 
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),

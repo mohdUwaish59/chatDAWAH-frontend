@@ -83,7 +83,8 @@ export default function ChatInterfaceEnhanced() {
     setIsLoading(true)
 
     try {
-      const response = await queryChat(userInput, 5)
+      // top_k will be fetched from backend config automatically
+      const response = await queryChat(userInput)
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
@@ -298,6 +299,33 @@ export default function ChatInterfaceEnhanced() {
                                   </span>
                                   <span className="flex-1">{source.instruction}</span>
                                 </div>
+                                
+                                {/* Video metadata if available */}
+                                {(source.channel_username || source.video_id) && (
+                                  <div className="ml-7 mb-2 flex flex-wrap gap-2 items-center text-[10px]">
+                                    {source.channel_username && (
+                                      <span className="px-2 py-0.5 bg-accent/10 text-accent rounded-full font-semibold border border-accent/20">
+                                        📺 {source.channel_username}
+                                      </span>
+                                    )}
+                                    {source.video_id && (
+                                      <a
+                                        href={`https://www.youtube.com/watch?v=${source.video_id}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-2 py-0.5 bg-primary/10 text-primary rounded-full font-semibold border border-primary/20 hover:bg-primary/20 transition-colors"
+                                      >
+                                        🎥 Watch Video
+                                      </a>
+                                    )}
+                                    {source.source && (
+                                      <span className="px-2 py-0.5 bg-muted text-muted-foreground rounded-full text-[9px]">
+                                        {source.source}
+                                      </span>
+                                    )}
+                                  </div>
+                                )}
+                                
                                 <div className="flex items-center gap-2 text-muted-foreground ml-7">
                                   <div className="flex-1 h-1.5 bg-muted rounded-full overflow-hidden">
                                     <div
